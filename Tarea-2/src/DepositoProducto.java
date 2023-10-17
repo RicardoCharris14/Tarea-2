@@ -1,17 +1,19 @@
-public class DepositoProducto {
-    private ArrayList<Bebida> bebidas;
-    public Deposito(){
-        bebidas = new ArrayList();
+import java.util.ArrayList;
+
+public class DepositoProducto<T> {
+    private ArrayList<T> productos;
+    public DepositoProducto(){
+        productos = new ArrayList();
     }
-    public void addBebida(Bebida bebida){
-        bebidas.add(bebida);
+    public void addProducto(T item){
+        productos.add(item);
     }
-    public Bebida getBebida(){
-        if(bebidas.isEmpty()){
+    public T getProducto(){
+        if(productos.isEmpty()){
             return null;
         }
         else{
-            return bebidas.remove(0);
+            return productos.remove(0);
         }
     }
 
