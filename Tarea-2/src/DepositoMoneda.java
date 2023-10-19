@@ -1,8 +1,15 @@
+import java.util.ArrayList;
 public class DepositoMoneda {
     public ArrayList<Moneda> monedas;
-    public DepositoM(){
+    public DepositoMoneda(){
         monedas = new ArrayList();
     }
+
+    public ArrayList<Moneda> getMonedas() {
+        return monedas;
+    }
+
+
     public void addMoneda(Moneda moneda){
         monedas.add(moneda);
     }
