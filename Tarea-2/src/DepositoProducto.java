@@ -7,6 +7,8 @@ import java.util.ArrayList;
  * @author Vicente Ramirez
  */
 public class DepositoProducto<T> {
+    /**objeto de clase T, para obtener el nombre de la clase en el toString */
+    private T tipoProducto;
     /**guarda varios productos del tipo T */
     private ArrayList<T> productos;
     public DepositoProducto(){
@@ -33,8 +35,13 @@ public class DepositoProducto<T> {
             return productos.remove(0);
         }
     }
+
+    /**
+     * Describe la clase DepositoProducto
+     * @return String que da una descripcion de la clase
+     */
     public String toString(){
-        return "";
+        return "\nDeposito que contiene productos de tipo "+tipoProducto.getClass().getSimpleName();
     }
 
 
