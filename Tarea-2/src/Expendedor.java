@@ -56,8 +56,8 @@ public class Expendedor {
                     producto1 = depositoSuper8.getElemento();
                     break;
                 default:
-                    //crear exepcion NoHayProductoExepcion
-                    monedas.addElemento(m);
+                    throw NoHayProductoException("\nSeleccion de producto invalida.");
+                    //monedas.addElemento(m);
                     return null;
             }
 
@@ -69,8 +69,8 @@ public class Expendedor {
                 }
             }
              else{
-                monedas.addElemento(m);
-                // crear exepcion NoHayProductoExepcion XD
+                 throw NoHayProductoException("\nNo hay disponibilidad del producto que se solicitó.");
+                 //monedas.addElemento(m);
             }
             return producto1;
         }
