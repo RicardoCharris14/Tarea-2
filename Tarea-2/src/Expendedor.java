@@ -30,8 +30,8 @@ public class Expendedor {
 
     public Producto comprarProducto(Moneda m, SeleccionProductos n_producto ){
         if (m==null){
-            //crear exepcion PagoIncorrectoExepcion
-            return null;
+            throw PagoIncorrectoException("\nNo se ha ingresado una moneda.");
+            //return null;
         }
         if (m.getValor()!= 100 || m.getValor()!= 500 || m.getValor()!=1000) {
             monedas.addElemento(m);
@@ -75,9 +75,9 @@ public class Expendedor {
             return producto1;
         }
         else{
-            //crear exepcion PagoInsuficienteExcepcion
-            monedas.addElemento(m);
-            return null;
+            throw PagoInsuficienteException("\nEl monto ingresado es insuficiente.");
+            //monedas.addElemento(m);
+            //return null;
         }
 
     }
