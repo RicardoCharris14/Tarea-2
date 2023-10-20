@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 public class DepositoMoneda {
-    public ArrayList<Moneda> monedas;
+    private ArrayList<Moneda> monedas;
     public DepositoMoneda(){
         monedas = new ArrayList();
     }

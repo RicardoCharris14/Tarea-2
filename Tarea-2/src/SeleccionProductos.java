@@ -5,11 +5,13 @@
  */
 public enum SeleccionProductos {
     /**Constantes que hacen alucion a los diferentes productos*/
-    Sprite(3000),Cocacola(1500),Fanta(1000),Snickers(800),Super8(500);
+    Sprite(1, 3000),Cocacola(2,1500),Fanta(3,1000),Snickers(4,800),Super8(5,500);
     /**Guarda el precio de cada constante*/
     private final int precio;
-    SeleccionProductos(int precio){
+    private final int numroSeleccion;
+    SeleccionProductos(int numeroSeleccion, int precio){
         this.precio = precio;
+        this.numroSeleccion = numeroSeleccion;
     }
 
     /**
