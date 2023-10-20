@@ -12,7 +12,7 @@ public class Cocacola extends Bebida{
      * simula que se consume una CocaCola
      * @return String que indica que se bebio una CocaCola
      */
-    public String beber(){
+    public String consumir(){
         return "Me bebi una cocacola";
     }
 

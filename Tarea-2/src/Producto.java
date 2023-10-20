@@ -17,6 +17,7 @@ public abstract class Producto {
     public int getSerie(){
         return serie;
     }
+    public abstract String consumir();
 
     /**
      *Describe la clase

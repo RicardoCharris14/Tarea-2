@@ -9,12 +9,6 @@ public abstract class Bebida extends Producto{
     }
 
     /**
-     * Simula la accion de beber una bebida
-     * @return String que representa la accion de beber
-     */
-    public abstract String beber();
-
-    /**
      * Da una descripcion de la clase
      * @return String que describe la clase Bebida
      */

@@ -10,12 +10,6 @@ public abstract class Dulce extends Producto {
     }
 
     /**
-     * Simula que se come un dulce
-     * @return String que indica que se comio el dulce
-     */
-    public abstract String comer();
-
-    /**
      * Describe la clase
      * @return String que da una descripcion de la clase Dulce
      */

@@ -1,33 +1,25 @@
 public class Comprador {
-    private String sonido;
+    private String productoConsumido;
     private int vuelto;
-    public Comprador(Moneda m, int cualProducto, Expendedor exp){
-        if(cualProducto == //bebida) {
+    public Comprador(Moneda m, SeleccionProductos eleccion, Expendedor exp){
+        vuelto = 0;
+        Producto productoComprado = exp.comprarProducto(m, eleccion);
+        if(productoComprado != null) {
+            productoConsumido = productoComprado.consumir();
+        }
+        Moneda tmp = exp.getVuelto();
+        while(tmp != null){
+            vuelto += tmp.getValor();
+            tmp = exp.getVuelto();
+        }
 
-        Bebida bebida = exp.comprarBebida(m, cualBebida);
-
-        if(bebida == null || ){
-            sonido = null;
-        }
-        else{
-            sonido = bebida.beber();
-        }
-        Moneda aux;
-        do{
-            aux = exp.getVuelto();
-            if(aux == null){
-                break;
-            }
-            vuelto += aux.getValor();
-        }while(aux!= null);
-        }
-    }
-    public int cuantoVuelto(){
-        return vuelto;
     }
     public String queBebiste(){
-        return sonido;
+        return productoConsumido;
+    }
+    public int getVuelto(){
+        return vuelto;
     }
 
 }
-}
+

@@ -1,5 +1,8 @@
+import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println();
+        Deposito<Moneda> deposito1 = new Deposito<>();
+        System.out.println(deposito1.toString());
     }
 }

@@ -12,7 +12,7 @@ public class Super8 extends Dulce {
      * Simula que se comio el Super8
      * @return String que indica que ya se comio el Super8
      */
-    public String comer(){
+    public String consumir(){
         return "Me comi un Super8";
     }
 

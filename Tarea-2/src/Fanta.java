@@ -12,7 +12,7 @@ public class Fanta extends Bebida{
      * Simula el consumo de una fanta
      * @return String que indica que se bebio una fanta
      */
-    public String beber(){
+    public String consumir(){
         return "Me bebi una fanta";
     }
 

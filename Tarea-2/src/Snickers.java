@@ -12,7 +12,7 @@ public class Snickers extends Dulce {
      * Simula la accion de comer un Snickers
      * @return String que indica que se consumio el Snickers
      */
-    public String comer(){
+    public String consumir(){
         return "Me comi un Snickers";
     }
 

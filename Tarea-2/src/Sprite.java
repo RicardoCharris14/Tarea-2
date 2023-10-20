@@ -10,7 +10,7 @@ public class Sprite extends Bebida{
      * Simula la accion de beber una sprite
      * @return String que indica que se bebio la sprite
      */
-    public String beber(){
+    public String consumir(){
         return "Me bebi una sprite";
     }
 

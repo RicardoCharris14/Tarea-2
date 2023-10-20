@@ -1,31 +1,30 @@
 public class Expendedor {
-    private DepositoProducto<Cocacola> depositoCoca;
-    private DepositoProducto<Sprite> depositSprite;
-    private DepositoProducto<Fanta> depositoFanta;
-    private DepositoProducto<Snickers> depositoSnickers;
-    private DepositoProducto<Super8> depositoSuper8;
-    private DepositoMoneda monedas;
-
+    private Deposito<Cocacola> depositoCoca;
+    private Deposito<Sprite> depositSprite;
+    private Deposito<Fanta> depositoFanta;
+    private Deposito<Snickers> depositoSnickers;
+    private Deposito<Super8> depositoSuper8;
+    private Deposito<Moneda> monedas;
 
     public Expendedor(int numProducto) {
-        depositoCoca = new DepositoProducto<Cocacola>();
-        depositSprite = new DepositoProducto<Sprite>();
-        depositoFanta = new DepositoProducto<Fanta>();
-        depositoSuper8 = new DepositoProducto<Super8>();
-        depositoSnickers = new DepositoProducto<Snickers>();
-        monedas = new DepositoMoneda();
+        depositoCoca = new Deposito<>();
+        depositSprite = new Deposito<>();
+        depositoFanta = new Deposito<>();
+        depositoSuper8 = new Deposito<>();
+        depositoSnickers = new Deposito<>();
+        monedas = new Deposito<>();
 
         for (int i = 0; i < numProducto; i++) {
             Cocacola bebida1  = new Cocacola(100 + i);
-            depositoCoca.addProducto(bebida1);
+            depositoCoca.addElemento(bebida1);
             Sprite bebida2 = new Sprite(200 + i);
-            depositSprite.addProducto(bebida2);
+            depositSprite.addElemento(bebida2);
             Fanta bebida3 = new Fanta(300  + i);
-            depositoFanta.addProducto(bebida3);
+            depositoFanta.addElemento(bebida3);
             Snickers dulce1 = new Snickers(400 + i);
-            depositoSnickers.addProducto(dulce1);
+            depositoSnickers.addElemento(dulce1);
             Super8 dulce2 = new Super8(500 + i);
-            depositoSuper8.addProducto(dulce2);
+            depositoSuper8.addElemento(dulce2);
         }
     }
 
@@ -35,29 +34,30 @@ public class Expendedor {
             return null;
         }
         if (m.getValor()!= 100 || m.getValor()!= 500 || m.getValor()!=1000) {
-            monedas.addMoneda(m);
+            monedas.addElemento(m);
             return null;
         }
         else if(m.getValor()>=n_producto.getPrecio()){
             Producto producto1;
             switch(n_producto) {
                 case Cocacola:
-                    producto1 = depositoCoca.getProducto();
+                    producto1 = depositoCoca.getElemento();
                     break;
                 case Sprite:
-                    producto1 = depositSprite.getProducto();
+                    producto1 = depositSprite.getElemento();
                     break;
                 case Fanta:
-                    producto1 = depositoFanta.getProducto();
+                    producto1 = depositoFanta.getElemento();
                     break;
                 case Snickers:
-                    producto1 = depositoSnickers.getProducto();
+                    producto1 = depositoSnickers.getElemento();
                     break;
                 case Super8:
-                    producto1 = depositoSuper8.getProducto();
+                    producto1 = depositoSuper8.getElemento();
+                    break;
                 default:
                     //crear exepcion NoHayProductoExepcion
-                    monedas.addMoneda(m);
+                    monedas.addElemento(m);
                     return null;
             }
 
@@ -65,24 +65,24 @@ public class Expendedor {
                 int NumMonedas=(m.getValor()-n_producto.getPrecio())/100;
                 for(int i=0;i<NumMonedas;i++) {
                     Moneda moneda = new Moneda100();
-                    monedas.addMoneda(moneda);
+                    monedas.addElemento(moneda);
                 }
             }
              else{
-                monedas.addMoneda(m);
+                monedas.addElemento(m);
                 // crear exepcion NoHayProductoExepcion XD
             }
             return producto1;
         }
         else{
-            //crear exepcion NoHayProductoExepcion
-            monedas.addMoneda(m);
+            //crear exepcion PagoInsuficienteExcepcion
+            monedas.addElemento(m);
             return null;
         }
 
     }
     public Moneda getVuelto() {
-        return monedas.getMoneda();
+        return monedas.getElemento();
     }
 }
 
