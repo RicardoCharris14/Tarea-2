@@ -1,11 +1,12 @@
 /**
  * Esta clase es un objeto de moneda de 100 que extiende de la clase moneda
- */
-
-/**
- * constructor de moneda de 100
+ * @author Vicente Ramírez
+ * @author Ricardo Charris
  */
 public class Moneda100 extends Moneda {
+    /**
+     * constructor de moneda de 100
+     */
     public Moneda100(){
         super();
     }
@@ -18,5 +19,14 @@ public class Moneda100 extends Moneda {
         return 100;
     }
 
+    /**
+     * metodo toString de Moneda100
+     * @return deuvelve Moneda100 en forma de string
+     */
 
+    @Override
+    public String toString() {
+        return "Moneda100{}";
+    }
 }
+

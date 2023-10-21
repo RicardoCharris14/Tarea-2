@@ -1,20 +1,19 @@
 /**
- * Esta clase es abstracta y hereda las monedas
- * @author Vicente
- * @author Ricardo
+ * Esta clase es abstracta, hereda las monedas e implementa la interfaz Comparable *
+ * @author Vicente Ramírez
+ * @author Ricardo Charris
  */
 
-/**
- * Metodo constructor de Moneda
- */
 public abstract class Moneda  implements Comparable <Moneda>{
+    /**
+     * Metodo constructor de Moneda
+     */
     public Moneda(){
-
     }
 //REVISAR EL HASCODE DEL METODO
     /**
-     *
-     * @return devuelve la moneda
+     *  obtiene el hashcode de moneda, lo transforma a hexadecimal y lo representa como un String
+     *  @return devuelve el hashcode de la moneda
      */
     public String getSerie(){
         int hashCode = System.identityHashCode(this);
@@ -26,14 +25,16 @@ public abstract class Moneda  implements Comparable <Moneda>{
 
     /**
      * funcion abstracta que hereda getValor
-     * @return devualve el valor de la moneda
+     * @return devuelve el valor de la moneda
      */
     public abstract int getValor();
 
 
-
-
-
+    /**
+     *  Metodo que compara las monedas
+     * @param moneda Es el objeto comparado
+     * @return devuelve 1, -1, 0 dependiendo el caso
+     */
     public int compareTo(Moneda moneda){
         if(this.getValor() > moneda.getValor()){
             return 1;
