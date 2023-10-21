@@ -41,7 +41,7 @@ public class Comprador {
      * metodo que guarda lo que va a consumir el comprador
      * @return devuelve el  producto que va a consumir
      */
-    public String queBebiste(){
+    public String queConsumiste(){
         return productoConsumido;
     }
 

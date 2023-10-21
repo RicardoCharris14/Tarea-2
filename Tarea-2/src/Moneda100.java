@@ -26,7 +26,7 @@ public class Moneda100 extends Moneda {
 
     @Override
     public String toString() {
-        return "Moneda100{}";
+        return "Moneda con valor de $100";
     }
 }
 

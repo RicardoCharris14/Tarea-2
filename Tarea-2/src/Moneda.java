@@ -18,20 +18,20 @@ public abstract class Moneda  implements Comparable <Moneda>{
     public String getSerie(){
         int hashCode = System.identityHashCode(this);
         String hexHashCode = Integer.toHexString(hashCode);
-        return hexHashCode;
+        return "0x"+hexHashCode;
     }
 
 
 
     /**
-     * funcion abstracta que hereda getValor
+     * funcion abstracta que retorna el valor de la moneda
      * @return devuelve el valor de la moneda
      */
     public abstract int getValor();
 
 
     /**
-     *  Metodo que compara las monedas
+     *  Metodo que compara el valor de las monedas
      * @param moneda Es el objeto comparado
      * @return devuelve 1, -1, 0 dependiendo el caso
      */

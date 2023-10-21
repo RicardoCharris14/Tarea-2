@@ -55,6 +55,13 @@ public class Expendedor {
             Super8 dulce2 = new Super8(500 + i);
             depositoSuper8.addElemento(dulce2);
         }
+        System.out.println("EXPENDEDOR CREADO\n\nPrecios de los productos:\n-CocaCola: $"+SeleccionProductos.Cocacola.getPrecio()+
+                "\n-Sprite: $"+SeleccionProductos.Sprite.getPrecio()+"\n-Fanta: $"+SeleccionProductos.Fanta.getPrecio()+
+                "\n-Snickers: $"+SeleccionProductos.Snickers.getPrecio()+"\n-Super8: $"+SeleccionProductos.Super8.getPrecio()+
+                "\n\nHay "+numProducto+" unidades de cada producto.");
+    }
+    public Moneda getMoneda(){
+        return monedas.getElemento();
     }
 
     /**
@@ -73,8 +80,7 @@ public class Expendedor {
 
     public Producto comprarProducto(Moneda m, SeleccionProductos n_producto )throws PagoInsuficienteException, PagoIncorrectoException, NoHayProductoException{
         if (m==null){
-            throw new PagoIncorrectoException("\nNo se ha ingresado una moneda.");
-            //return null;
+            throw new PagoIncorrectoException("\nNo se ha ingresado una moneda.\n");
         }
         if (m.getValor()!= 100 && m.getValor()!= 500 && m.getValor()!=1000) {
             monedas.addElemento(m);
@@ -100,7 +106,7 @@ public class Expendedor {
                     break;
                 default:
                     monedas.addElemento(m);
-                    throw new  NoHayProductoException("\nSeleccion de producto invalida.");
+                    throw new  NoHayProductoException("\nSeleccion de producto invalida.\n");
 
             }
 
@@ -112,17 +118,16 @@ public class Expendedor {
                 }
             }
              else{
+                System.out.println(m.getValor());
                  monedas.addElemento(m);
-                 throw new NoHayProductoException("\nNo hay disponibilidad del producto que se solicitó.");
+                 throw new NoHayProductoException("\nNo hay disponibilidad del producto que se solicitó.\n");
 
             }
             return producto1;
         }
         else{
             monedas.addElemento(m);
-            throw new PagoInsuficienteException("\nEl monto ingresado es insuficiente.");
-
-            //return null;
+            throw new PagoInsuficienteException("\nEl monto ingresado es insuficiente.\n");
         }
 
     }
